@@ -29,5 +29,14 @@ services:
     networks:
       - app-mysql-network
 
+  frontend-app-container:
+    container_name: frontend-app-container
+    build:
+      context: ./frontend-app
+    ports:
+      - '80:80'
+    networks:
+      - app-mysql-network
+
 networks:
   app-mysql-network:
