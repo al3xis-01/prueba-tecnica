@@ -199,3 +199,9 @@ La aplicación estará disponible en los puertos especificados.
 └── resources
     └── db.sql
 ```
+
+## Credits
+
+<a href="https://github.com/al3xis-01">
+  <img src="https://avatars.githubusercontent.com/u/81994472?v=4" width="100"> 
+</a>
