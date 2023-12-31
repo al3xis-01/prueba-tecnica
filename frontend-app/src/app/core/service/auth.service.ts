@@ -25,8 +25,9 @@ export class AuthService {
   }
 
   login(credentials: Credentials): Observable<AuthResponse>{
-    const url =  API_URL + '/Authentication/Login';
-    return this.http.post<AuthResponse>(url, credentials);
+
+    const url =  `${API_URL}/Authentication/Login/${credentials.email}/${credentials.password}`;
+    return this.http.get<AuthResponse>(url);
   }
 
   saveCredentials(authResponse: AuthResponse): void{
