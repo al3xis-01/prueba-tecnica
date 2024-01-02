@@ -5,7 +5,7 @@ COPY . /app
 WORKDIR /app
 
 # Descargar dependencias y construir el proyecto con Gradle
-RUN ./gradlew build
+#RUN ./gradlew build
 
 # Configurar la entrada para ejecutar la aplicación
 ENTRYPOINT ["java", "-jar", "/app/build/libs/backend-app-0.0.1-SNAPSHOT.jar"]
