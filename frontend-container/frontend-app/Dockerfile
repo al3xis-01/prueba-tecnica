@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Compilar la aplicación
-RUN npm run build --prod
+#RUN npm run build --prod
 
 # Etapa de Producción
 FROM nginx:alpine
