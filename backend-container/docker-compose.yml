@@ -3,7 +3,7 @@ version: '3.8'
 services:
   mysqldb-container:
     container_name: mysqldb-container
-    image: mysql:latest
+    image: mysql:8.0
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -11,7 +11,7 @@ services:
       MYSQL_USER: db_user
       MYSQL_PASSWORD: Db2023#
     ports:
-      - '4306:3306'
+      - '3306:3306'
     volumes:
       - ./build/mysql:/var/lib/mysql
       - ./resources/db.sql:/docker-entrypoint-initdb.d/init-script.sql
@@ -23,18 +23,9 @@ services:
     build:
       context: ./backend-app
     ports:
-      - '8080:8080'
+      - '80:8080'
     depends_on:
       - mysqldb-container
-    networks:
-      - app-mysql-network
-
-  frontend-app-container:
-    container_name: frontend-app-container
-    build:
-      context: ./frontend-app
-    ports:
-      - '80:80'
     networks:
       - app-mysql-network
 

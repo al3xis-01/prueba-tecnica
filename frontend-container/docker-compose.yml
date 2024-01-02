@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  frontend-app-container:
+    container_name: frontend-app-container
+    build:
+      context: ./frontend-app
+    ports:
+      - '80:80'
